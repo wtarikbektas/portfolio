@@ -34,11 +34,11 @@ export function HeroButton({}) {
       href="#second"
       scrambleParams={[
         {
-          text: "Check out",
+          text: "Hizmetlerimiz",
           chars: "-x",
         },
         {
-          text: "Latest Work",
+          text: "İletişim",
           chars: "-x",
         },
       ]}
@@ -47,9 +47,9 @@ export function HeroButton({}) {
         <div className="round hidden items-center justify-center md:flex">
           <p className="absolute left-[37%] whitespace-nowrap text-[21px]">
             <span>
-              <span className="scrambleText">Check out</span>
+              <span className="scrambleText">Hizmetlerimiz</span>
               <br />
-              <span className="scrambleText">Latest Work</span>
+              <span className="scrambleText">İletişim</span>
             </span>
           </p>
         </div>
@@ -59,7 +59,7 @@ export function HeroButton({}) {
             ref={rotating}
             width={120}
             height={120}
-            src="/img/logo.png"
+            src="/w3m logo.png"
             alt=""
           />
         </div>

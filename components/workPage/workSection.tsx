@@ -81,12 +81,12 @@ export function WorkSection({
                 } bg-color${color} mask`}
                 href={item.link}
                 target="_blank"
-                scrambleParams={{ text: "Show Me", chars: "-x" }}
+                scrambleParams={{ text: "İletişime Geç", chars: "-x" }}
               >
                 <p className="shapka">
-                  <span className="scrambleText">Show Me</span>
+                  <span className="scrambleText">İletişime Geç</span>
                   <svg
-                    className="ml-4 inline w-[0.8em] -rotate-[75deg] text-inherit" // width="34px"
+                    className="ml-12 inline w-[0.8em] -rotate-[75deg] text-inherit" // width="34px"
                     // height="34px"
                     viewBox="0 0 14 14"
                     version="1.1"

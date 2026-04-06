@@ -66,18 +66,18 @@ export default function ProfileForm() {
   ) => {
     switch (status) {
       case "Success":
-        return "Message Sent 👍";
+        return "Mesaj Gönderildi 👍";
 
       case "Error":
-        return "Something Went Wrong ❌";
+        return "Bir şeyler yanlış gitti ❌";
 
       case "Loading":
-        return "Sending Message ⌛";
+        return "Mesaj Gönderiliyor ⌛";
 
       default:
         return (
           <>
-            Submit
+            Gönder
             <svg
               className="ml-[0.3em] w-[0.7em] rotate-45 transition-transform group-hover:translate-x-1 "
               viewBox="0 0 24 24"
@@ -105,7 +105,7 @@ export default function ProfileForm() {
       <HeaderNavigation />
       <main className="darkGradient relative flex  w-full flex-col items-start justify-center px-paddingX py-paddingY text-[clamp(20px,_1.3vw_+_8px,_120px)] text-colorLight">
         <h1 className="mb-[1.5em] mt-[0.5em] text-[12.2vw] font-bold leading-[0.9] tracking-tight md:text-[clamp(16px,_6.3vw_+_8px,_120px)]">
-          Let's start a <br /> project together
+          Gelin birlikte bir <br /> proje başlatalım.
         </h1>
         <Form {...form}>
           <form
@@ -117,9 +117,9 @@ export default function ProfileForm() {
               name="name"
               render={({ field }) => (
                 <FormItem className=" ">
-                  <FormLabel>What's your name?</FormLabel>
+                  <FormLabel>İsminiz Nedir?</FormLabel>
                   <FormControl>
-                    <Input type="text" placeholder="Your Name" {...field} />
+                    <Input type="text" placeholder="İsminiz" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -130,9 +130,9 @@ export default function ProfileForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>What's your email?</FormLabel>
+                  <FormLabel>Email Adresiniz?</FormLabel>
                   <FormControl>
-                    <Input placeholder="yourname123@email.com" {...field} />
+                    <Input placeholder="isminiz@email.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -143,11 +143,11 @@ export default function ProfileForm() {
               name="message"
               render={({ field }) => (
                 <FormItem className="border-b">
-                  <FormLabel>Your message</FormLabel>
+                  <FormLabel>Mesajınız</FormLabel>
                   <FormControl>
                     <Textarea
                       className="h-[10em] "
-                      placeholder="Type your message here"
+                      placeholder="Mesajınızı buraya yazın"
                       {...field}
                     />
                   </FormControl>

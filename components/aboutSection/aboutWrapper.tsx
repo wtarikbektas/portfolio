@@ -1,25 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Magentic from "../ui/magentic";
 import { gsap } from "gsap";
-import { AboutMarquee } from "./aboutMarquee";
 import { links } from "@/data/data";
-import TestimonialCard from "./testimonialCard";
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
 import { isDesktop } from "@/lib/utils";
+import { AboutMarquee } from "./aboutMarquee";
 
 export function AboutWrapper({}) {
   const [text, setText] = useState({
-    main: "Featured Work",
-    para: `Building high-end, pixel-perfect websites for agencies and individuals while creating high quality rebuilds in my free time.`,
+    main: "Faliyet Alanlarımız",
+    para: `Standart çözümler yerine, tamamen ihtiyaca özel yazılım sistemleri geliştiriyoruz. Performans, ölçeklenebilirlik ve kullanıcı deneyimini merkeze alarak projelerinizi bir üst seviyeye taşıyoruz.`,
   });
   useEffect(() => {
     if (!isDesktop()) {
       setText({
-        main: "Recent Work",
-        para: `Building high-end websites with agencies and individuals while creating rebuilds in my free time.`,
+        main: "Faliyet Alanlarımız",
+        para: `Standart çözümler yerine, tamamen ihtiyaca özel yazılım sistemleri geliştiriyoruz. Performans, ölçeklenebilirlik ve kullanıcı deneyimini merkeze alarak projelerinizi bir üst seviyeye taşıyoruz.`,
       });
     }
   }, []);
@@ -36,7 +31,7 @@ export function AboutWrapper({}) {
         <Magentic
           href={links.work}
           scrambleParams={{
-            text: "View all Work",
+            text: "Hizmetlerimiz",
           }}
           onMouseEnter={() => {
             if (isDesktop()) {
@@ -68,7 +63,7 @@ export function AboutWrapper({}) {
         >
           <p className="shapka !flex text-[0.9em]  text-colorLight md:text-[0.7em]">
             <span className="scrambleText whitespace-nowrap">
-              View all Work
+              Hizmetlerimiz
             </span>
             <svg
               className="ml-4 w-[0.7em] -rotate-45 text-colorLight  " // width="34px"

@@ -74,22 +74,22 @@ export function HeaderNavigation() {
 
   const headerData = [
     {
-      name: "Home",
+      name: "Anasayfa",
       href: links.home,
     },
 
     {
-      name: "Work",
+      name: "Hizmetler",
       href: links.work,
     },
     {
-      name: "Contact",
+      name: "İletişim",
       href: links.email,
     },
-    {
-      name: "Twitter/X",
-      href: links.twitter,
-    },
+    // {
+    //   name: "Twitter/X",
+    //   href: links.twitter,
+    // },
   ];
   return (
     <>

@@ -52,7 +52,7 @@ export function ImageSequence({
         snap: "frame",
         ease: "none",
         duration: 0.2,
-        onUpdate: render, // use animation onUpdate instead of scrollTrigger's onUpdate
+        onUpdate: render,
       });
     };
 
@@ -65,7 +65,6 @@ export function ImageSequence({
     };
   }, []);
 
-  // const { isActive } = useAppSelector((state) => state.splineReducer);
   return (
     <div className="contrast-110 absolute left-0 top-0 z-10 flex h-full w-full items-center justify-center grayscale">
       <canvas

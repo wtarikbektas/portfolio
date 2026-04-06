@@ -22,9 +22,9 @@ const helvetica = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Vipul Kumar • Developer",
+  title: "W3M- Yazılım Geliştrime",
   description:
-    "Vipul Kumar is a developer who creates beautiful and pixel perfect websites with zero effort in reviews.",
+    "w3m kurumsal yazılım geliştirme hizmetleri sunan bir şirkettir. Müşterilerimize özel yazılım çözümleri sunarak iş süreçlerini optimize etmelerine yardımcı oluyoruz.",
 };
 
 export default function RootLayout({
