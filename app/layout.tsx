@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import GoogleAnalytics from "@/app/GoogleAnalytics";
 import Script from "next/script";
@@ -8,13 +7,8 @@ import "./globals.css";
 import StoreProvider from "@/redux/storeProvider";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
+import { siteConfig, siteStructuredData } from "@/lib/seo";
 gsap.registerPlugin(CustomEase);
-
-const dM_Sans = DM_Sans({ subsets: ["latin-ext"] });
-const satoshi = localFont({
-  src: "../font/satoshi/Satoshi-Variable.woff2",
-  style: "normal",
-});
 
 const helvetica = localFont({
   src: "../font/helvetica/HelveticaNowDisplay-Medium.woff2",
@@ -22,9 +16,52 @@ const helvetica = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "W3M- Yazılım Geliştrime",
-  description:
-    "w3m kurumsal yazılım geliştirme hizmetleri sunan bir şirkettir. Müşterilerimize özel yazılım çözümleri sunarak iş süreçlerini optimize etmelerine yardımcı oluyoruz.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.fullName,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteConfig.fullName,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.fullName,
+      },
+    ],
+    locale: siteConfig.locale,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.fullName,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -33,29 +70,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-          rel="stylesheet"
-        ></link>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no"
-        ></meta>
-        <GoogleAnalytics />
-      </head>
-
+    <html lang="tr">
       <body className={helvetica.className}>
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          {children}
+          <GoogleAnalytics />
+          <Script src="https://cdn.jsdelivr.net/gh/vipulkumar-dev/gsap@2024/ScrambleTextPlugin.min.js" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: siteStructuredData }}
+          />
+        </StoreProvider>
       </body>
-      <Script src="https://cdn.jsdelivr.net/gh/vipulkumar-dev/gsap@2024/ScrambleTextPlugin.min.js" />
     </html>
   );
 }
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0e0d0c",
+};

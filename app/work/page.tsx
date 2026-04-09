@@ -65,7 +65,7 @@ const projectsData = [
   {
     title: (
       <>
-        Yapaz Zeka <br /> Çözümleri
+        Yapay Zeka <br /> Çözümleri
       </>
     ),
     description: "Yapay Zeka Destekli Çözümler",
@@ -83,10 +83,17 @@ const projectsData = [
     imageLink: "/otomasyon.png",
   },
 ];
-//test
+
 export default function WorkPage() {
   return (
     <>
+      <section className="sr-only">
+        <h1>W3M yazılım hizmetleri</h1>
+        <p>
+          Kurumsal web siteleri, e-ticaret, özel yazılım, mobil uygulama, veri
+          ve web robotları, yapay zeka ve otomasyon çözümleri geliştiriyoruz.
+        </p>
+      </section>
       <Cursor />
       <HeaderNavigation />
       <FullpageProviderWork>

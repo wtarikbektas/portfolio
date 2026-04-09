@@ -7,6 +7,7 @@ import { HeaderNavigation } from "@/components/headerNavigation";
 import "./index.css";
 
 export default function HomePage({}) {
+  console.log("HomePage rendered");
   return (
     <>
       <Cursor />

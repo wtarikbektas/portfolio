@@ -111,7 +111,9 @@ export function AboutWrapper({}) {
       >
         <div className="flex flex-col items-center justify-center">
           <div className="anime">
-            <h2 className="work_heading mask">{text.main}</h2>
+            <h2 className="work_heading mask text-[clamp(20px,_5.5vw,_48px)] text-center text-colorDark">
+              {text.main}
+            </h2>
           </div>
           {/* <a href={links.work} className="work__cto anime">
             <div className="left">

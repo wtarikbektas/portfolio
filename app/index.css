@@ -381,7 +381,6 @@ textPath {
 .work_heading {
   position: relative;
   z-index: 1;
-  font-size: var(--fontExtraBig) !important;
   font-weight: bold;
   text-align: center;
   letter-spacing: -0.01em;
